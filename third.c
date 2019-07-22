@@ -1,29 +1,37 @@
-#include "stdio.h"
-#include "stdlib.h"
-struct student
-{
-  char name[10];
-  int roll;
-  char branch[10];
-  int duration;
-};
-struct student acad(struct student *stu);
-struct student acad1(struct student *stu1);
+#include<stdio.h>
 int main()
 {
-  struct student *stu3;
-  acad(&stu3);
-
+  int arr[10];
+int pos=0;
+int n;
+int temp;
+printf("\n Enter the number of elements in the array ");
+scanf("%d",&n);
+printf("\n Enter the elements of array ");
+for(int i=0;i<n;i++)
+{
+  scanf("%d",&arr[i]);
 
 }
-struct student acad(struct student *stu)
+printf("\n Original Array is ");
+for(int i=0;i<n;i++)
 {
-  printf("\n Enter details ");
-  scanf("%s %d %s %d",stu->name,&stu->roll,stu->branch,&stu->duration);
-  acad1(&stu);
+  printf("%d  ",arr[i]);
 }
-struct student acad1(struct student *stu1)
+for(int i=0;i<n;i++)
 {
-  printf("\n details are  ");
-  printf("%s %d %s %d",stu1->name,stu1->roll,stu1->branch,stu1->duration);
+  if(arr[i]%2==0)
+  {
+  temp=arr[i];
+  arr[i]=arr[pos];
+  arr[pos]=temp;
+  pos++;
+}
+}
+printf("\n Final Array is ");
+for(int i=0;i<n;i++)
+{
+  printf("%d  ",arr[i]);
+
+}
 }
